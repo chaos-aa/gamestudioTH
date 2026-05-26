@@ -1,0 +1,22 @@
+body {
+    background-color: rebeccapurple;
+    display: flex;
+    justify-content: center;
+    margin: 15px auto;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    background-color: sandybrown;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border-radius: 5px;
+    max-width: 960px;
+    padding-bottom: 10px;
+}
+
+h1 {
+    border-radius: 6px;
+    color: darkolivegreen;
+    font-size: 72px;
+}
