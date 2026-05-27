@@ -1,16 +1,43 @@
-/* ============================================
-   RETRO NEON 80s ARCADE GAME STUDIO THEME
-   ============================================ */
+/* BEGINNER CYBERPUNK CSS */
 
-:root {
-  --neon-pink: #ff10f0;
-  --neon-cyan: #00ffff;
-  --neon-purple: #a900ff;
-  --neon-yellow: #ffff00;
-  --dark-bg: #0a0a0a;
-  --dark-navy: #0d0221;
-  --glow-blur: 15px;
+/* Scrollbar *?
+/* --- 8-Bit Arcade Scrollbar Template --- */
+
+/* 1. Global scrollbar sizing */
+::-webkit-scrollbar {
+  width: 20px;
+  height: 20px;
 }
+
+/* 2. The Track: Flat dark background with a blocky internal accent line */
+::-webkit-scrollbar-track {
+  background: #111111;
+  border: 4px solid #000000;
+}
+
+/* 3. The Thumb: Neon color block with thick black pixel borders */
+::-webkit-scrollbar-thumb {
+  background-color: #ff0055; /* Hot neon pink */
+  border: 4px solid #000000;
+  box-shadow: inset -4px -4px 0px #aa0038; /* Blocky shadow inside the thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #ff3377;
+}
+
+
+
+/* 5. Cross-browser standard fallback (Firefox) */
+html {
+  scrollbar-width: auto;
+  scrollbar-color: #ff0055 #111111;
+}
+
+
+
+
+/* Setup basics */
 
 * {
   margin: 0;
@@ -18,301 +45,253 @@
   box-sizing: border-box;
 }
 
-html, body {
-  width: 100%;
-  height: 100%;
-  font-family: 'Courier New', monospace;
-  background: linear-gradient(135deg, var(--dark-navy) 0%, var(--dark-bg) 50%, #1a0033 100%);
-  background-attachment: fixed;
-  color: var(--neon-cyan);
-  overflow-x: hidden;
-  position: relative;
+body {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  background-color: #0a0a0a;
+  color: #ffffff;
 }
 
-/* VHS Scanline effect */
-body::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: repeating-linear-gradient(
-    0deg,
-    rgba(0, 0, 0, 0.1) 0px,
-    rgba(0, 0, 0, 0.1) 1px,
-    transparent 1px,
-    transparent 2px
-  );
-  pointer-events: none;
-  z-index: 999;
-}
-
-/* ============================================
-   CONTAINER
-   ============================================ */
-
-#container {
-  min-height: 100vh;
+/* TOP BAR */
+.topbar {
+  background-color: #660000;
+  border-bottom: 3px solid #00ffff;
+  padding: 10px 20px;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 40px 20px;
-  position: relative;
+  justify-content: space-between;
+  font-size: 12px;
 }
 
-/* ============================================
-   MAIN CONTENT - Arcade Cabinet Style
-   ============================================ */
+.topbar-left {
+  color: #00ffff;
+}
 
+.topbar-right {
+  color: #00ffff;
+}
+
+/* VIDEO BAR */
+#video-bar {
+  background-color: #660000;
+  border-bottom: 3px solid #00ffff;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+  color: #00ffff;
+  font-weight: bold;
+
+  text-shadow: 0 0 5px #00ffff;
+
+}
+
+/* MAIN WRAPPER */
+.wrapper {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* SIDEBARS */
+.sidebar-left {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sidebar-right {
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* MAIN CONTENT */
 main {
-  max-width: 900px;
-  width: 100%;
-  background: rgba(13, 2, 33, 0.9);
-  border: 3px solid var(--neon-cyan);
-  border-radius: 4px;
-  padding: 50px 40px;
-  position: relative;
-  box-shadow: 
-    0 0 30px var(--neon-cyan),
-    0 0 60px rgba(169, 0, 255, 0.4),
-    inset 0 0 20px rgba(0, 255, 255, 0.05);
-  animation: arcade-flicker 0.15s infinite;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-@keyframes arcade-flicker {
-  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
-    opacity: 1;
-    text-shadow: 0 0 10px var(--neon-cyan);
-  }
-  20%, 24%, 55% {
-    opacity: 0.98;
-  }
+/* BOXES/PANELS */
+.box {
+  background-color: #1a1a1a;
+  border: 2px solid #cc0000;
+  padding: 10px;
 }
 
-/* ============================================
-   TYPOGRAPHY
-   ============================================ */
+.box-title {
+  color: #00ffff;
+  font-size: 11px;
+  font-weight: bold;
+  border-bottom: 1px solid #cc0000;
+  padding-bottom: 8px;
+  margin-bottom: 10px;
+  text-shadow: 0 0 5px #00ffff;
+}
+
+.box-content {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.box-content p {
+  margin: 5px 0;
+}
+
+/* HEADER */
+.header {
+  background-color: #330000;
+  border: 2px solid #cc0000;
+  padding: 20px;
+}
 
 h1 {
-  font-size: 3.5rem;
-  font-weight: bold;
+  color: #00ffff;
+  font-size: 36px;
+  margin-bottom: 15px;
   text-align: center;
-  margin-bottom: 40px;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  color: var(--neon-pink);
-  text-shadow: 
-    0 0 10px var(--neon-pink),
-    0 0 20px var(--neon-purple),
-    0 0 30px rgba(169, 0, 255, 0.5);
-  animation: neon-flicker 1.5s ease-in-out infinite;
-  font-family: 'Courier New', monospace;
+  text-shadow: 0 0 10px #00ffff;
 }
 
-@keyframes neon-flicker {
-  0%, 100% {
-    text-shadow: 
-      0 0 10px var(--neon-pink),
-      0 0 20px var(--neon-purple),
-      0 0 30px rgba(169, 0, 255, 0.5);
-  }
-  50% {
-    text-shadow: 
-      0 0 20px var(--neon-pink),
-      0 0 40px var(--neon-cyan),
-      0 0 50px rgba(0, 255, 255, 0.4);
-  }
+.nav {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  border-top: 1px solid #00ffff;
+  padding-top: 15px;
 }
 
-/* ============================================
-   VIDEO STYLING
-   ============================================ */
+.nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 11px;
+  padding: 5px 10px;
+  border: 1px solid transparent;
+}
+
+.nav a:hover {
+  color: #00ffff;
+  border: 1px solid #00ffff;
+  background-color: rgba(0, 255, 255, 0.1);
+}
+
+/* VIDEO BOX */
+.video-box {
+  background-color: #000000;
+  border: 2px solid #cc0000;
+  padding: 2px;
+}
 
 video {
   width: 100%;
-  max-width: 100%;
-  height: auto;
-  margin: 20px 0;
-  border: 2px solid var(--neon-cyan);
-  box-shadow: 
-    0 0 15px var(--neon-cyan),
-    inset 0 0 15px rgba(0, 255, 255, 0.1);
-  background-color: #000000;
   display: block;
-  border-radius: 2px;
+  object-fit: fill;
 }
 
-/* ============================================
-   PRE/CODE STYLING
-   ============================================ */
+/* TEXT BOX */
+.text-box {
+  background-color: #1a1a1a;
+  border: 2px solid #cc0000;
+  padding: 15px;
+}
 
 pre {
   font-family: 'Courier New', monospace;
-  font-size: 0.9rem;
-  line-height: 1.6;
-  overflow-x: auto;
-  white-space: pre-wrap;
-  word-wrap: break-word;
-  color: var(--neon-cyan);
-  text-shadow: 0 0 8px var(--neon-cyan);
-  background: rgba(0, 0, 0, 0.6);
-  padding: 25px;
-  border-left: 4px solid var(--neon-pink);
-  border-radius: 2px;
-  margin: 20px 0;
-  position: relative;
-  box-shadow: inset 0 0 15px rgba(0, 255, 255, 0.05);
-  max-height: 400px;
+  font-size: 16px;
+  color: #00ffff;
   overflow-y: auto;
+  max-height: 200px;
 }
 
-/* Neon scrollbar */
-pre::-webkit-scrollbar {
-  width: 12px;
+/* BUTTONS */
+.btn {
+  background-color: transparent;
+  border: 1px solid #00ffff;
+  color: #00ffff;
+  padding: 6px 12px;
+  margin-top: 8px;
+  font-size: 10px;
+  cursor: pointer;
 }
 
-pre::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.5);
+.btn:hover {
+  background-color: rgba(0, 255, 255, 0.2);
+  text-shadow: 0 0 5px #00ffff;
 }
 
-pre::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, var(--neon-pink), var(--neon-cyan));
-  border-radius: 6px;
-  border: 1px solid var(--neon-purple);
+.btn-red {
+  border: 1px solid #cc0000;
+  color: #cc0000;
 }
 
-pre::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, var(--neon-cyan), var(--neon-purple));
+.btn-red:hover {
+  background-color: rgba(204, 0, 0, 0.2);
+  text-shadow: 0 0 5px #cc0000;
 }
 
-/* ============================================
-   DECORATIVE ELEMENTS
-   ============================================ */
-
-/* Top corner accent */
-main::before {
-  content: '▌▐ ARCADE ▌▐';
-  position: absolute;
-  top: 15px;
-  left: 20px;
-  color: var(--neon-yellow);
-  font-size: 0.7rem;
-  letter-spacing: 3px;
-  opacity: 0.7;
-  animation: pulse-accent 1.5s ease-in-out infinite;
-  text-shadow: 0 0 10px var(--neon-yellow);
+/* SPECIAL TEXT */
+.date {
+  color: #ff00ff;
+  font-size: 10px;
 }
 
-/* Bottom corner accent */
-main::after {
-  content: '▌▐ STUDIO ▌▐';
-  position: absolute;
-  bottom: 15px;
-  right: 20px;
-  color: var(--neon-yellow);
-  font-size: 0.7rem;
-  letter-spacing: 3px;
-  opacity: 0.7;
-  animation: pulse-accent 1.5s ease-in-out infinite 0.3s;
-  text-shadow: 0 0 10px var(--neon-yellow);
+.box-content h4 {
+  color: #00ffff;
+  font-size: 12px;
+  margin: 8px 0;
 }
 
-@keyframes pulse-accent {
-  0%, 100% {
-    opacity: 0.7;
-  }
-  50% {
-    opacity: 1;
-  }
+/* FOOTER */
+footer {
+  background-color: #330000;
+  border-top: 2px solid #cc0000;
+  padding: 15px 20px;
+  text-align: center;
+  font-size: 10px;
+  margin-top: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 
-/* ============================================
-   RESPONSIVE DESIGN
-   ============================================ */
-
-@media (max-width: 768px) {
-  main {
-    padding: 35px 25px;
-    border-width: 2px;
+/* MOBILE RESPONSIVE */
+@media (max-width: 1024px) {
+  .wrapper {
+    flex-direction: column;
   }
 
-  h1 {
-    font-size: 2.5rem;
-    margin-bottom: 25px;
-    letter-spacing: 2px;
+  .sidebar-left {
+    width: 100%;
   }
 
-  pre {
-    font-size: 0.8rem;
-    padding: 20px;
-    border-left-width: 3px;
+  .sidebar-right {
+    width: 100%;
   }
 
-  video {
-    border-width: 2px;
-  }
-
-  main::before,
-  main::after {
-    font-size: 0.6rem;
-    letter-spacing: 2px;
+  .main {
+    width: 100%;
   }
 }
 
-@media (max-width: 480px) {
-  #container {
-    padding: 20px 10px;
+@media (max-width: 600px) {
+  .nav {
+    flex-direction: column;
+    gap: 5px;
   }
 
-  main {
-    padding: 25px 15px;
-    border-width: 2px;
-    box-shadow: 
-      0 0 20px var(--neon-cyan),
-      0 0 40px rgba(169, 0, 255, 0.3);
+  .nav a {
+    font-size: 10px;
   }
 
   h1 {
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-    letter-spacing: 1px;
+    font-size: 24px;
   }
 
-  pre {
-    font-size: 0.75rem;
-    padding: 15px;
-    line-height: 1.5;
-    border-left-width: 3px;
+  .topbar {
+    font-size: 10px;
   }
-
-  main::before,
-  main::after {
-    font-size: 0.5rem;
-    letter-spacing: 1px;
-  }
-}
-
-/* ============================================
-   LINK STYLING
-   ============================================ */
-
-a {
-  color: var(--neon-cyan);
-  text-decoration: none;
-  border-bottom: 2px solid var(--neon-pink);
-  transition: all 0.3s ease;
-  text-shadow: 0 0 5px var(--neon-cyan);
-}
-
-a:hover {
-  color: var(--neon-pink);
-  text-shadow: 
-    0 0 10px var(--neon-cyan),
-    0 0 15px var(--neon-pink);
-  border-bottom-color: var(--neon-cyan);
-}
-
-a:active {
-  color: var(--neon-yellow);
 }
