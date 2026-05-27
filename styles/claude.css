@@ -46,7 +46,8 @@ html {
 }
 
 body {
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  /* font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; */
+  font-family: 'Courier New', Courier, monospace;
   background-color: #0a0a0a;
   color: #ffffff;
 }
@@ -69,6 +70,11 @@ body {
   color: #00ffff;
 }
 
+.row {
+  display: flex;
+  gap: 10px;
+}
+
 /* VIDEO BAR */
 #video-bar {
   background-color: #660000;
@@ -89,8 +95,8 @@ body {
   display: flex;
   gap: 10px;
   padding: 10px;
-  max-width: 1400px;
-  margin: 0 auto;
+  /* max-width: 1400px; */ /* to get rid of the black space*/
+  margin: 0;
   min-height: 100vh;
 }
 
@@ -212,15 +218,20 @@ h1 {
 
 /* VIDEO BOX */
 .video-box {
+  width: 40%;
   background-color: #000000;
   border: 2px solid #cc0000;
   padding: 2px;
 }
 
-video {
+/* override the video width so it fills its box */
+.video-box video {
   width: 100%;
-  display: block;
-  object-fit: fill;
+}
+
+/* SIDE TEXT BOX: takes up the remaining space */
+.side-text {
+  flex: 1;
 }
 
 /* TEXT BOX */
@@ -230,12 +241,24 @@ video {
   padding: 15px;
 }
 
+.side-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.side-text pre {
+  flex: 1;
+  max-height: 600px;  /* remove the max-height limit */
+  overflow-y: auto;  /* keep scrollbar if needed */
+}
+
 pre {
   font-family: 'Courier New', monospace;
   font-size: 16px;
   color: #00ffff;
   overflow-y: auto;
-  max-height: 200px;
+  /* max-height: 200px; */
 }
 
 /* BUTTONS */
