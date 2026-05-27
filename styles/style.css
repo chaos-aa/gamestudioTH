@@ -1,20 +1,6 @@
 /* ============================================
-   RETRO 80s/90s THEMED STYLESHEET
-   ============================================ */
-
-:root {
-  --primary-neon: #ff006e;
-  --secondary-neon: #00f5ff;
-  --tertiary-neon: #ffbe0b;
-  --dark-bg: #0a0a0a;
-  --retro-purple: #6a0dad;
-  --retro-pink: #ff10f0;
-  --scanline-color: rgba(0, 0, 0, 0.15);
-  --glow-blur: 20px;
-}
-
-/* ============================================
-   GLOBAL STYLES
+   EARLY 2000s / 90s WEB 1.0 STYLESHEET
+   "The Way Websites Used to Look"
    ============================================ */
 
 * {
@@ -26,35 +12,20 @@
 html, body {
   width: 100%;
   height: 100%;
-  font-family: 'Courier New', 'Courier', monospace;
-  background: linear-gradient(135deg, var(--dark-bg) 0%, #1a0033 50%, var(--dark-bg) 100%);
-  background-attachment: fixed;
-  color: var(--secondary-neon);
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #c0c0c0;
+  color: #000000;
   overflow-x: hidden;
   position: relative;
 }
 
-/* CRT Monitor Effect Overlay */
-body::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: repeating-linear-gradient(
-    0deg,
-    var(--scanline-color) 0px,
-    var(--scanline-color) 1px,
-    transparent 1px,
-    transparent 2px
-  );
-  pointer-events: none;
-  z-index: 999;
+/* Classic tiled background pattern */
+body {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"><rect width="40" height="40" fill="%23c0c0c0"/><rect width="20" height="20" fill="%23dfdfdf"/><rect x="20" y="20" width="20" height="20" fill="%23dfdfdf"/></svg>');
 }
 
 /* ============================================
-   CONTAINER
+   CONTAINER - Windows 95 Style Dialog Box
    ============================================ */
 
 #container {
@@ -62,223 +33,177 @@ body::before {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 40px 20px;
-  position: relative;
-  perspective: 1000px;
-}
-
-/* Animated background elements */
-#container::before {
-  content: '';
-  position: fixed;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(255, 1, 110, 0.1) 1px, transparent 1px);
-  background-size: 50px 50px;
-  animation: drift 20s linear infinite;
-  z-index: -1;
-}
-
-@keyframes drift {
-  0% {
-    transform: translate(0, 0);
-  }
-  100% {
-    transform: translate(50px, 50px);
-  }
+  padding: 20px;
+  font-size: 11px;
 }
 
 /* ============================================
-   MAIN CONTENT
+   MAIN CONTENT - Classic Window
    ============================================ */
 
 main {
-  max-width: 900px;
+  max-width: 800px;
   width: 100%;
-  background: linear-gradient(145deg, rgba(10, 10, 10, 0.95), rgba(26, 0, 51, 0.95));
-  border: 3px solid var(--primary-neon);
-  border-radius: 8px;
-  padding: 60px 40px;
-  position: relative;
-  box-shadow: 
-    0 0 40px var(--primary-neon),
-    0 0 80px rgba(106, 10, 173, 0.5),
-    inset 0 0 30px rgba(0, 245, 255, 0.1);
-  animation: flicker 0.15s infinite;
+  background-color: #c0c0c0;
+  border: 2px solid;
+  border-color: #ffffff #808080 #808080 #ffffff;
+  box-shadow: 1px 1px 0 0 #dfdfdf, -1px -1px 0 0 #808080;
+  padding: 2px;
 }
 
-@keyframes flicker {
-  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
-    opacity: 1;
-  }
-  20%, 24%, 55% {
-    opacity: 0.95;
-  }
+main::before {
+  content: '';
+  display: block;
+  background-color: #000080;
+  color: #ffffff;
+  padding: 2px 2px 2px 2px;
+  margin: 2px 2px 2px 2px;
+  font-weight: bold;
+  font-size: 11px;
 }
 
 /* ============================================
-   TYPOGRAPHY
+   TITLE BAR
    ============================================ */
 
 h1 {
-  font-size: 4rem;
+  background: linear-gradient(90deg, #000080 0%, #1084d7 100%);
+  color: #ffffff;
+  padding: 3px 2px 3px 2px;
+  margin: 2px 2px 2px 2px;
+  font-size: 14px;
   font-weight: bold;
+  font-family: 'MS Sans Serif', Arial, sans-serif;
   text-align: center;
-  margin-bottom: 50px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  background: linear-gradient(90deg, var(--primary-neon), var(--secondary-neon), var(--tertiary-neon));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  filter: drop-shadow(0 0 10px var(--primary-neon));
-  animation: neon-glow 2s ease-in-out infinite;
-  font-family: 'Courier New', monospace;
-}
-
-@keyframes neon-glow {
-  0%, 100% {
-    filter: drop-shadow(0 0 10px var(--primary-neon));
-    text-shadow: 0 0 20px rgba(255, 1, 110, 0.5);
-  }
-  50% {
-    filter: drop-shadow(0 0 20px var(--secondary-neon));
-    text-shadow: 0 0 30px rgba(0, 245, 255, 0.5);
-  }
+  border: 1px solid;
+  border-color: #ffffff #000080 #000080 #ffffff;
+  letter-spacing: 0px;
+  text-transform: none;
 }
 
 /* ============================================
-   PRE/CODE STYLING
+   CONTENT AREA
    ============================================ */
 
 pre {
-  font-family: 'Courier New', 'Courier', monospace;
-  font-size: 0.95rem;
-  line-height: 1.8;
-  overflow-x: auto;
+  font-family: 'Courier New', monospace;
+  font-size: 10px;
+  line-height: 1.5;
+  overflow: auto;
   white-space: pre-wrap;
   word-wrap: break-word;
-  color: var(--secondary-neon);
-  text-shadow: 
-    0 0 10px var(--secondary-neon),
-    0 0 20px rgba(0, 245, 255, 0.3);
-  background: rgba(0, 0, 0, 0.6);
-  padding: 30px;
-  border-left: 5px solid var(--tertiary-neon);
-  border-radius: 4px;
-  margin: 0;
-  position: relative;
-  box-shadow: inset 0 0 20px rgba(0, 245, 255, 0.05);
+  color: #000000;
+  background-color: #c0c0c0;
+  padding: 10px 8px;
+  margin: 4px;
+  border: 1px solid;
+  border-color: #808080 #ffffff #ffffff #808080;
+  text-align: left;
+  height: 400px;
+  overflow-y: scroll;
 }
 
-/* Custom scrollbar for retro feel */
+/* Classic scrollbar styling */
 pre::-webkit-scrollbar {
-  width: 12px;
-  height: 12px;
+  width: 16px;
+  height: 16px;
 }
 
 pre::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.4);
+  background-color: #c0c0c0;
+  border: 1px solid;
+  border-color: #dfdfdf #808080 #808080 #dfdfdf;
 }
 
 pre::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, var(--primary-neon), var(--secondary-neon));
-  border-radius: 6px;
-  border: 2px solid rgba(10, 10, 10, 0.8);
+  background-color: #c0c0c0;
+  border: 2px solid;
+  border-color: #ffffff #808080 #808080 #ffffff;
 }
 
-pre::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, var(--secondary-neon), var(--tertiary-neon));
+pre::-webkit-scrollbar-corner {
+  background-color: #c0c0c0;
 }
 
-
-main::before {
-  content: '▚ ▚ ▚';
-  position: absolute;
-  top: 15px;
-  left: 20px;
-  color: var(--tertiary-neon);
-  font-size: 0.8rem;
-  letter-spacing: 8px;
-  opacity: 0.6;
-  animation: pulse 1.5s ease-in-out infinite;
-}
+/* ============================================
+   DECORATIVE ELEMENTS - Old Web Badges
+   ============================================ */
 
 main::after {
-  content: '▚ ▚ ▚';
-  position: absolute;
-  bottom: 15px;
-  right: 20px;
-  color: var(--primary-neon);
-  font-size: 0.8rem;
-  letter-spacing: 8px;
-  opacity: 0.6;
-  animation: pulse 1.5s ease-in-out infinite 0.3s;
+  content: '';
+  display: block;
+  height: 20px;
+  background-color: #c0c0c0;
+  margin: 10px 4px 4px 4px;
+  border-top: 1px solid #dfdfdf;
+  text-align: center;
+  font-size: 8px;
+  color: #808080;
 }
 
-@keyframes pulse {
-  0%, 100% {
-    opacity: 0.6;
-  }
-  50% {
-    opacity: 1;
-  }
-}
-
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
 
 @media (max-width: 768px) {
+  #container {
+    padding: 10px;
+  }
+
   main {
-    padding: 40px 25px;
-    border-width: 2px;
+    max-width: 100%;
   }
 
   h1 {
-    font-size: 2.5rem;
-    margin-bottom: 30px;
-    letter-spacing: 2px;
+    font-size: 12px;
+    padding: 2px;
   }
 
   pre {
-    font-size: 0.85rem;
-    padding: 20px;
-    border-left-width: 4px;
-  }
-
-  main::before,
-  main::after {
-    font-size: 0.7rem;
-    letter-spacing: 5px;
+    font-size: 9px;
+    height: 300px;
+    padding: 8px 6px;
+    line-height: 1.4;
   }
 }
 
 @media (max-width: 480px) {
   #container {
-    padding: 20px 10px;
-  }
-
-  main {
-    padding: 30px 15px;
-    border-width: 2px;
+    padding: 5px;
   }
 
   h1 {
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-    letter-spacing: 1px;
+    font-size: 11px;
   }
 
   pre {
-    font-size: 0.75rem;
-    padding: 15px;
-    line-height: 1.6;
-  }
-
-  main::before,
-  main::after {
-    font-size: 0.6rem;
-    letter-spacing: 3px;
+    font-size: 8px;
+    height: 250px;
+    padding: 6px 4px;
+    line-height: 1.3;
+    margin: 2px;
   }
 }
 
+/* ============================================
+   CLASSIC WEB 1.0 LINKS (if added)
+   ============================================ */
+
+a {
+  color: #0000ff;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+a:visited {
+  color: #800080;
+}
+
+a:active {
+  color: #ff0000;
+}
+
+a:hover {
+  color: #0000ff;
+  background-color: #ffff00;
+}
