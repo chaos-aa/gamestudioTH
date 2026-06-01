@@ -353,6 +353,19 @@ footer {
   .main {
     width: 100%;
   }
+
+  /* Stack video and side-text vertically */
+  .row {
+    flex-direction: column;
+  }
+
+  .video-box {
+    width: 100%;
+  }
+
+  .side-text {
+    width: 100%;
+  }
 }
 
 @media (max-width: 600px) {
@@ -371,5 +384,19 @@ footer {
 
   .topbar {
     font-size: 10px;
+  }
+
+  /* Extra mobile adjustments */
+  .video-box {
+    width: 100% !important;
+  }
+
+  .video-box video {
+    width: 100% !important;
+  }
+
+  .side-text pre {
+    font-size: 12px;
+    max-height: 300px;
   }
 }
