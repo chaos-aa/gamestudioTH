@@ -52,6 +52,43 @@ body {
   color: #ffffff;
 }
 
+/* SCROLLING BANNER */
+.scroll-banner {
+  background-color: #660000;
+  border-bottom: 2px solid #cc0000;
+  border-top: 2px solid #cc0000;
+  overflow: hidden;
+  padding: 10px 0;
+}
+
+.scroll-content {
+  display: flex;
+  gap: 20px;
+  animation: scroll 15s linear infinite;
+  white-space: nowrap;
+}
+
+.scroll-content span {
+  color: #00ffff;
+  font-size: 14px;
+  font-weight: bold;
+  text-shadow: 0 0 10px #00ffff;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-25%);
+  }
+}
+
+/* Pause on hover */
+.scroll-banner:hover .scroll-content {
+  animation-play-state: paused;
+}
+
 /* TOP BAR */
 .topbar {
   background-color: #660000;
