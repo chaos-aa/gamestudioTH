@@ -408,6 +408,9 @@ footer {
   font-size: 14px;
   letter-spacing: 2px;
   text-shadow: 0 0 5px #cc0000;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
 }
 
 /* TEAM GRID LAYOUT */
