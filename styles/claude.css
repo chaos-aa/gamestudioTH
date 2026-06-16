@@ -292,6 +292,8 @@ h1 {
 /* override the video width so it fills its box */
 .video-box video {
   width: 100%;
+  height: auto;
+  display: block;
 }
 
 /* SIDE TEXT BOX: takes up the remaining space */
