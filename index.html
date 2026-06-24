@@ -1,71 +1,87 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-    <meta name="author" content="Chaos AA">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Game Studio - Python</title>
-  <link rel="stylesheet" href="styles/claude.css">
-</head>
-<body>
-  
-  <div class="topbar">
-    <div class="topbar-left">BEYOND GAMING</div>
-    <div class="topbar-right">ABOVE AND BEYOND</div>
-  </div>
-
-  <div class="scroll-banner-container">
-  <div class="scroll-banner" id="scroll-banner-one">
-    <span class="banner-item">⚡ WELCOME TO GAME LABS ⚡</span>
-    <span class="banner-item">⚡ WELCOME TO GAME LABS ⚡</span>
-    <span class="banner-item">⚡ WELCOME TO GAME LABS ⚡</span>
-    <span class="banner-item">⚡ WELCOME TO GAME LABS ⚡</span>
-    <span class="banner-item">⚡ WELCOME TO GAME LABS ⚡</span>
-  </div>
-  <div class="scroll-banner" id="scroll-banner-two">
-    <span class="banner-item">⚡ WELCOME TO GAME LABS ⚡</span>
-    <span class="banner-item">⚡ WELCOME TO GAME LABS ⚡</span>
-    <span class="banner-item">⚡ WELCOME TO GAME LABS ⚡</span>
-    <span class="banner-item">⚡ WELCOME TO GAME LABS ⚡</span>
-    <span class="banner-item">⚡ WELCOME TO GAME LABS ⚡</span>
-  </div>
-  <div class="banner-fade"></div>
-</div>
-  <div class="wrapper">
-    
-    <div class="sidebar-left">
-      <div class="box">
-        <div class="box-title">Game List/Links</div>
-        <div class="box-content">
-          <p><a href="FINAL_BUILD_FR/game.html">Maze</a></p>
-          <p><a href="team.html">Meet the Team</a></p>
-          <p>Brainrot</p>
-          <p>FPS</p>
-          <p>Horror</p>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="author" content="Chaos AA" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Game Studio - Python</title>
+    <link rel="stylesheet" href="styles/claude.css" />
+  </head>
+  <body>
+    <!--
+    Spider
+  -->
+    <div id="spider-warning">
+      <div class="warning-box">
+        <div class="warning-icon">🕷</div>
+        <h2>HEADS UP</h2>
+        <p>
+          This site has a little friend that occasionally scuttles across the
+          screen.
+        </p>
+        <p class="warning-sub">
+          If spiders aren't your thing, no worries — pick the calm option.
+        </p>
+        <div class="warning-buttons">
+          <button id="spiders-on" class="btn">ENTER (WITH SPIDERS)</button>
+          <button id="spiders-off" class="btn btn-red">
+            ENTER (NO SPIDERS)
+          </button>
         </div>
       </div>
-      
-      
+    </div>
+    <div class="topbar">
+      <div class="topbar-left">BEYOND GAMING</div>
+      <div class="topbar-right">ABOVE AND BEYOND</div>
     </div>
 
-    <main>
-      
-      <div class="header">
-        <h1>GAME LABS</h1>
-
+    <div class="scroll-banner-container">
+      <div class="scroll-banner" id="scroll-banner-one">
+        <span class="banner-item">⚡ WELCOME TO GAME LABS ⚡</span>
+        <span class="banner-item">⚡ WELCOME TO GAME LABS ⚡</span>
+        <span class="banner-item">⚡ WELCOME TO GAME LABS ⚡</span>
+        <span class="banner-item">⚡ WELCOME TO GAME LABS ⚡</span>
+        <span class="banner-item">⚡ WELCOME TO GAME LABS ⚡</span>
+      </div>
+      <div class="scroll-banner" id="scroll-banner-two">
+        <span class="banner-item">⚡ WELCOME TO GAME LABS ⚡</span>
+        <span class="banner-item">⚡ WELCOME TO GAME LABS ⚡</span>
+        <span class="banner-item">⚡ WELCOME TO GAME LABS ⚡</span>
+        <span class="banner-item">⚡ WELCOME TO GAME LABS ⚡</span>
+        <span class="banner-item">⚡ WELCOME TO GAME LABS ⚡</span>
+      </div>
+      <div class="banner-fade"></div>
+    </div>
+    <div class="wrapper">
+      <div class="sidebar-left">
+        <div class="box">
+          <div class="box-title">Game List/Links</div>
+          <div class="box-content">
+            <p><a href="FINAL_BUILD_FR/game.html">Maze</a></p>
+            <p><a href="team.html">Meet the Team</a></p>
+            <p>Brainrot</p>
+            <p>FPS</p>
+            <p>Horror</p>
+          </div>
+        </div>
       </div>
 
-      <div id="video-bar">Game Demo Below</div>
-      <div class="row">
-      <div class="video-box">
-        <video controls>
-          <source src="videos/demo1.mp4" type="video/mp4">
-          Your browser doesn't support HTML5 video.
-        </video>
-      </div>
+      <main>
+        <div class="header">
+          <h1>GAME LABS</h1>
+        </div>
 
-      <div class="text-box side-text">
-        <pre>
+        <div id="video-bar">Game Demo Below</div>
+        <div class="row">
+          <div class="video-box">
+            <video controls>
+              <source src="videos/demo1.mp4" type="video/mp4" />
+              Your browser doesn't support HTML5 video.
+            </video>
+          </div>
+
+          <div class="text-box side-text">
+            <pre>
 We're no strangers to love
 You know the rules and so do I
 A full commitment's what I'm thinking of
@@ -132,45 +148,154 @@ Never gonna run around and desert you
 Never gonna make you cry
 Never gonna say goodbye
 Never gonna tell a lie and hurt you
-        </pre>
-      </div>
-      </div>
-      <div class="text-box">
-        <pre>
+        </pre
+            >
+          </div>
+        </div>
+        <div class="text-box">
+          <pre>
           Python Game Development
-        </pre>
-      </div>
-    </main>
+        </pre
+          >
+        </div>
+      </main>
 
-    <div class="sidebar-right">
-      <div class="box">
-        <div class="box-title">FEATURED DEMOS</div>
-        <div class="box-content">
-          <p class="date">27.05.26</p>
-          <h4>Python Maze Game</h4>
-          <p>Game about finding a way out of a procedurrally generated maze</p>
-          <button class="btn btn-red">LAUNCH</button>
+      <div class="sidebar-right">
+        <div class="box">
+          <div class="box-title">FEATURED DEMOS</div>
+          <div class="box-content">
+            <p class="date">27.05.26</p>
+            <h4>Python Maze Game</h4>
+            <p>
+              Game about finding a way out of a procedurrally generated maze
+            </p>
+            <button class="btn btn-red">LAUNCH</button>
+          </div>
+        </div>
+
+        <div class="box">
+          <div class="box-title">UPDATES</div>
+          <div class="box-content">
+            <p class="date">27.05.26</p>
+            <p>Initial game testing</p>
+            <button class="btn">READ MORE</button>
+          </div>
         </div>
       </div>
-
-      <div class="box">
-        <div class="box-title">UPDATES</div>
-        <div class="box-content">
-          <p class="date">27.05.26</p>
-          <p>Initial game testing</p>
-          <button class="btn">READ MORE</button>
-        </div>
-      </div>
-
-     
     </div>
 
-  </div>
+    <footer>
+      <p>
+        Game assets, any videos, text and code are the property of their
+        respective authors. Built as a student/hobby project. CHAOS-AA on Github
+      </p>
+    </footer>
+    <!-- Spider script-->
+    <script>
+      (function () {
+        const STORAGE_KEY = "bg-spiders-enabled";
+        let spidersEnabled = false;
+        let loopTimer = null;
 
-  <footer>
-    <p>Game assets, any videos, text and code are the property of their respective authors. Built as a student/hobby project. CHAOS-AA on Github</p>
-  </footer>
+        const spiderSVG = `
+    <svg viewBox="0 0 100 80" xmlns="http://www.w3.org/2000/svg">
+      <g class="legs-top">
+        <path class="leg" d="M58 32 Q66 18 60 6"/>
+        <path class="leg" d="M52 30 Q54 14 44 4"/>
+        <path class="leg" d="M44 30 Q40 14 28 8"/>
+        <path class="leg" d="M37 32 Q26 22 14 18"/>
+      </g>
+      <g class="legs-bottom">
+        <path class="leg" d="M58 48 Q66 62 60 74"/>
+        <path class="leg" d="M52 50 Q54 66 44 76"/>
+        <path class="leg" d="M44 50 Q40 66 28 72"/>
+        <path class="leg" d="M37 48 Q26 58 14 62"/>
+      </g>
+      <ellipse class="body" cx="35" cy="40" rx="22" ry="16"/>
+      <ellipse class="body" cx="62" cy="40" rx="13" ry="11"/>
+      <circle class="eye" cx="69" cy="36"/>
+      <circle class="eye" cx="69" cy="44"/>
+    </svg>`;
 
-</body>
+        function launchSpider() {
+          if (!spidersEnabled) return;
+
+          const spider = document.createElement("div");
+          spider.className = "spider crawling";
+          spider.innerHTML = spiderSVG;
+
+          const goingRight = Math.random() < 0.5;
+          const startX = goingRight ? -90 : window.innerWidth + 90;
+          const endX = goingRight ? window.innerWidth + 90 : -90;
+          const yStart = 60 + Math.random() * (window.innerHeight - 200);
+          const yEnd = yStart + (Math.random() * 120 - 60);
+          const duration = 6 + Math.random() * 5; // seconds
+
+          spider.style.left = startX + "px";
+          spider.style.top = yStart + "px";
+          // face direction of travel
+          spider.style.transform = goingRight ? "scaleX(1)" : "scaleX(-1)";
+
+          spider.addEventListener("click", () => {
+            spider.classList.add("squished");
+            setTimeout(() => spider.remove(), 350);
+          });
+
+          document.body.appendChild(spider);
+
+          requestAnimationFrame(() => {
+            spider.style.transition = `left ${duration}s linear, top ${duration}s ease-in-out`;
+            spider.style.left = endX + "px";
+            spider.style.top = yEnd + "px";
+          });
+
+          setTimeout(() => spider.remove(), duration * 1000 + 200);
+        }
+
+        function scheduleNext() {
+          const delay = 8000 + Math.random() * 12000; // 8–20s between spiders
+          loopTimer = setTimeout(() => {
+            launchSpider();
+            scheduleNext();
+          }, delay);
+        }
+
+        function enableSpiders() {
+          spidersEnabled = true;
+          clearTimeout(loopTimer);
+          setTimeout(launchSpider, 2500); // first one shortly after entering
+          scheduleNext();
+        }
+
+        function disableSpiders() {
+          spidersEnabled = false;
+          clearTimeout(loopTimer);
+          document.querySelectorAll(".spider").forEach((s) => s.remove());
+        }
+
+        function dismissWarning(choice) {
+          localStorage.setItem(STORAGE_KEY, choice);
+          const warning = document.getElementById("spider-warning");
+          if (warning) warning.remove();
+          choice === "on" ? enableSpiders() : disableSpiders();
+        }
+
+        document
+          .getElementById("spiders-on")
+          .addEventListener("click", () => dismissWarning("on"));
+        document
+          .getElementById("spiders-off")
+          .addEventListener("click", () => dismissWarning("off"));
+
+        // Remember the visitor's choice on return visits
+        const saved = localStorage.getItem(STORAGE_KEY);
+        if (saved) {
+          const warning = document.getElementById("spider-warning");
+          if (warning) warning.remove();
+          saved === "on" ? enableSpiders() : disableSpiders();
+        }
+      })();
+    </script>
+  </body>
 </html>
 >>

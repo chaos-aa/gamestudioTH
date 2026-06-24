@@ -26,16 +26,11 @@
   background-color: #ff3377;
 }
 
-
-
 /* 5. Cross-browser standard fallback (Firefox) */
 html {
   scrollbar-width: auto;
   scrollbar-color: #ff0055 #111111;
 }
-
-
-
 
 /* Setup basics */
 
@@ -47,7 +42,7 @@ html {
 
 body {
   /* font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; */
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
   background-color: #0a0a0a;
   color: #ffffff;
 }
@@ -151,7 +146,6 @@ body {
   font-weight: bold;
 
   text-shadow: 0 0 5px #00ffff;
-
 }
 
 /* MAIN WRAPPER */
@@ -181,7 +175,8 @@ body {
   align-self: stretch;
 }
 
-.sidebar-left, .sidebar-right {
+.sidebar-left,
+.sidebar-right {
   background-color: #1a1a1a;
   border: 2px solid #cc0000;
   padding: 10px;
@@ -233,30 +228,69 @@ h1 {
   margin-bottom: 15px;
   text-align: center;
   text-shadow: 0 0 10px #00ffff;
-  animation: glitch 1.5s infinite, pulse-glow 2s ease-in-out infinite;
+  animation:
+    glitch 1.5s infinite,
+    pulse-glow 2s ease-in-out infinite;
   /* animation: flicker 3s infinite; */
   /* animation: pulse-glow 2s ease-in-out infinite; */
 }
 
 /* Animations */
 @keyframes glitch {
-  0%, 90%, 100% { transform: translate(0); color: #00ffff; }
-  92%            { transform: translate(-3px, 1px); color: #ff00ff; }
-  94%            { transform: translate(3px, -1px); color: #cc0000; }
-  96%            { transform: translate(-2px, 2px); color: #00ffff; }
+  0%,
+  90%,
+  100% {
+    transform: translate(0);
+    color: #00ffff;
+  }
+  92% {
+    transform: translate(-3px, 1px);
+    color: #ff00ff;
+  }
+  94% {
+    transform: translate(3px, -1px);
+    color: #cc0000;
+  }
+  96% {
+    transform: translate(-2px, 2px);
+    color: #00ffff;
+  }
 }
 
 @keyframes flicker {
-  0%, 80%, 100%  { text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff; opacity: 1; }
-  82%            { opacity: 0.2; }
-  84%            { opacity: 1; }
-  86%            { opacity: 0.1; }
-  88%            { opacity: 1; }
+  0%,
+  80%,
+  100% {
+    text-shadow:
+      0 0 10px #00ffff,
+      0 0 20px #00ffff;
+    opacity: 1;
+  }
+  82% {
+    opacity: 0.2;
+  }
+  84% {
+    opacity: 1;
+  }
+  86% {
+    opacity: 0.1;
+  }
+  88% {
+    opacity: 1;
+  }
 }
 
 @keyframes pulse-glow {
-  0%, 100% { text-shadow: 0 0 10px #00ffff; }
-  50%       { text-shadow: 0 0 30px #00ffff, 0 0 60px #00ffff, 0 0 80px #cc0000; }
+  0%,
+  100% {
+    text-shadow: 0 0 10px #00ffff;
+  }
+  50% {
+    text-shadow:
+      0 0 30px #00ffff,
+      0 0 60px #00ffff,
+      0 0 80px #cc0000;
+  }
 }
 
 .nav {
@@ -316,12 +350,12 @@ h1 {
 
 .side-text pre {
   flex: 1;
-  max-height: 600px;  /* remove the max-height limit */
-  overflow-y: auto;  /* keep scrollbar if needed */
+  max-height: 600px; /* remove the max-height limit */
+  overflow-y: auto; /* keep scrollbar if needed */
 }
 
 pre {
-  font-family: 'Courier New', monospace;
+  font-family: "Courier New", monospace;
   font-size: 16px;
   color: #00ffff;
   overflow-y: auto;
@@ -375,7 +409,7 @@ a {
 }
 
 a::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
@@ -503,6 +537,139 @@ footer {
 .btn-join:hover {
   background-color: rgba(204, 0, 0, 0.2);
   text-shadow: 0 0 5px #cc0000;
+}
+
+/* ARACHNOPHOBIA WARNING OVERLAY */
+#spider-warning {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background-color: rgba(10, 0, 0, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.warning-box {
+  background-color: #1a1a1a;
+  border: 2px solid #cc0000;
+  box-shadow: 0 0 30px rgba(204, 0, 0, 0.4);
+  padding: 30px;
+  max-width: 420px;
+  text-align: center;
+}
+
+.warning-icon {
+  font-size: 48px;
+  margin-bottom: 10px;
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.warning-box h2 {
+  color: #00ffff;
+  font-size: 22px;
+  letter-spacing: 3px;
+  margin-bottom: 15px;
+  text-shadow: 0 0 10px #00ffff;
+}
+
+.warning-box p {
+  color: #cccccc;
+  font-size: 13px;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.warning-sub {
+  color: #888888;
+  font-size: 11px;
+}
+
+.warning-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.warning-buttons .btn {
+  font-size: 12px;
+  padding: 10px;
+}
+
+/* THE SPIDER */
+.spider {
+  position: fixed;
+  z-index: 9998;
+  width: 70px;
+  height: 56px;
+  pointer-events: auto;
+  cursor: pointer;
+  will-change: transform, top, left;
+}
+
+.spider svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.spider .leg {
+  stroke: #00ffff;
+  stroke-width: 2.5;
+  fill: none;
+  stroke-linecap: round;
+}
+
+.spider .body {
+  fill: #1a1a1a;
+  stroke: #cc0000;
+  stroke-width: 2;
+}
+.spider .eye {
+  fill: #ff0055;
+}
+
+.spider .legs-top,
+.spider .legs-bottom {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.spider.crawling .legs-top {
+  animation: scuttle-top 0.18s linear infinite;
+}
+.spider.crawling .legs-bottom {
+  animation: scuttle-bottom 0.18s linear infinite;
+}
+
+@keyframes scuttle-top {
+  0%,
+  100% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(4deg);
+  }
+}
+@keyframes scuttle-bottom {
+  0%,
+  100% {
+    transform: rotate(4deg);
+  }
+  50% {
+    transform: rotate(-4deg);
+  }
+}
+
+/* squished spider when clicked */
+.spider.squished {
+  transition:
+    transform 0.2s ease,
+    opacity 0.3s ease;
+  transform: scale(1.4, 0.2) !important;
+  opacity: 0;
 }
 
 /* RESPONSIVE TEAM GRID */
