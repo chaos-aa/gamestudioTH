@@ -668,49 +668,108 @@ footer {
   animation: zap-die 0.9s forwards;
   cursor: default;
 }
-.spider.zapped .legs-top    { animation: curl-top 0.9s forwards; }
-.spider.zapped .legs-bottom { animation: curl-bottom 0.9s forwards; }
-.spider.zapped .leg         { animation: leg-char 0.9s forwards; }
-.spider.zapped .body        { animation: body-char 0.9s forwards; }
-.spider.zapped .eye         { animation: eye-die 0.9s forwards; }
+.spider.zapped .legs-top {
+  animation: curl-top 0.9s forwards;
+}
+.spider.zapped .legs-bottom {
+  animation: curl-bottom 0.9s forwards;
+}
+.spider.zapped .leg {
+  animation: leg-char 0.9s forwards;
+}
+.spider.zapped .body {
+  animation: body-char 0.9s forwards;
+}
+.spider.zapped .eye {
+  animation: eye-die 0.9s forwards;
+}
 
 @keyframes zap-die {
-  0%   { filter: brightness(1);   transform: var(--face) scale(1); }
-  8%   { filter: brightness(3.5) drop-shadow(0 0 12px #00ffff); }
-  16%  { filter: brightness(1); }
-  24%  { filter: brightness(4.5) drop-shadow(0 0 18px #ff0055); }
-  34%  { filter: brightness(1.5); transform: var(--face) scale(1.1); }
-  100% { filter: brightness(0.35);
-         transform: var(--face) scale(0.4) translateY(45px) rotate(20deg);
-         opacity: 0; }
+  0% {
+    filter: brightness(1);
+    transform: var(--face) scale(1);
+  }
+  8% {
+    filter: brightness(3.5) drop-shadow(0 0 12px #00ffff);
+  }
+  16% {
+    filter: brightness(1);
+  }
+  24% {
+    filter: brightness(4.5) drop-shadow(0 0 18px #ff0055);
+  }
+  34% {
+    filter: brightness(1.5);
+    transform: var(--face) scale(1.1);
+  }
+  100% {
+    filter: brightness(0.35);
+    transform: var(--face) scale(0.4) translateY(45px) rotate(20deg);
+    opacity: 0;
+  }
 }
 
 @keyframes curl-top {
-  0%   { transform: rotate(-4deg); }
-  20%  { transform: rotate(-32deg); }
-  100% { transform: rotate(55deg) scale(0.45); }
+  0% {
+    transform: rotate(-4deg);
+  }
+  20% {
+    transform: rotate(-32deg);
+  }
+  100% {
+    transform: rotate(55deg) scale(0.45);
+  }
 }
 @keyframes curl-bottom {
-  0%   { transform: rotate(4deg); }
-  20%  { transform: rotate(32deg); }
-  100% { transform: rotate(-55deg) scale(0.45); }
+  0% {
+    transform: rotate(4deg);
+  }
+  20% {
+    transform: rotate(32deg);
+  }
+  100% {
+    transform: rotate(-55deg) scale(0.45);
+  }
 }
 
 @keyframes leg-char {
-  0%   { stroke: #00ffff; }
-  10%  { stroke: #ffffff; }
-  30%  { stroke: #ff0055; }
-  100% { stroke: #440000; }
+  0% {
+    stroke: #00ffff;
+  }
+  10% {
+    stroke: #ffffff;
+  }
+  30% {
+    stroke: #ff0055;
+  }
+  100% {
+    stroke: #440000;
+  }
 }
 @keyframes body-char {
-  0%   { fill: #1a1a1a; stroke: #cc0000; }
-  10%  { fill: #ffffff; stroke: #ffffff; }
-  100% { fill: #110000; stroke: #440000; }
+  0% {
+    fill: #1a1a1a;
+    stroke: #cc0000;
+  }
+  10% {
+    fill: #ffffff;
+    stroke: #ffffff;
+  }
+  100% {
+    fill: #110000;
+    stroke: #440000;
+  }
 }
 @keyframes eye-die {
-  0%   { fill: #ff0055; }
-  10%  { fill: #ffffff; }
-  100% { fill: #220000; }
+  0% {
+    fill: #ff0055;
+  }
+  10% {
+    fill: #ffffff;
+  }
+  100% {
+    fill: #220000;
+  }
 }
 
 /* SPARKS */
@@ -723,13 +782,129 @@ footer {
   background: #00ffff;
   box-shadow: 0 0 8px #00ffff;
   pointer-events: none;
-  transition: transform 0.45s ease-out, opacity 0.45s ease-out;
+  transition:
+    transform 0.45s ease-out,
+    opacity 0.45s ease-out;
 }
 .spark.pink {
   background: #ff0055;
   box-shadow: 0 0 8px #ff0055;
 }
 
+/* JUMPSCARE WARNING (reuses .warning-box styles if you already have them) */
+#scare-warning {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background-color: rgba(10, 0, 0, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.warning-box {
+  background-color: #1a1a1a;
+  border: 2px solid #cc0000;
+  box-shadow: 0 0 30px rgba(204, 0, 0, 0.4);
+  padding: 30px;
+  max-width: 420px;
+  text-align: center;
+}
+.warning-icon {
+  font-size: 48px;
+  margin-bottom: 10px;
+  color: #cc0000;
+}
+.warning-box h2 {
+  color: #00ffff;
+  font-size: 22px;
+  letter-spacing: 3px;
+  margin-bottom: 15px;
+  text-shadow: 0 0 10px #00ffff;
+}
+.warning-box p {
+  color: #cccccc;
+  font-size: 13px;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+.warning-sub {
+  color: #888888;
+  font-size: 11px;
+}
+.warning-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+.warning-buttons .btn {
+  font-size: 12px;
+  padding: 10px;
+}
+
+/* THE JUMPSCARE OVERLAY */
+#jumpscare {
+  position: fixed;
+  inset: 0;
+  z-index: 100000;
+  background-color: #000000;
+  display: none; /* hidden until triggered */
+}
+#jumpscare.active {
+  display: block;
+}
+
+#scare-media {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* one-frame white flash + screen shake for punch */
+#jumpscare.active {
+  animation: scare-shake 0.5s linear;
+}
+@keyframes scare-shake {
+  0% {
+    transform: translate(0, 0);
+  }
+  10% {
+    transform: translate(-12px, 8px);
+  }
+  20% {
+    transform: translate(10px, -10px);
+  }
+  30% {
+    transform: translate(-10px, 6px);
+  }
+  40% {
+    transform: translate(8px, -8px);
+  }
+  50% {
+    transform: translate(-6px, 4px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+.scare-flash {
+  position: fixed;
+  inset: 0;
+  z-index: 100001;
+  background: #ffffff;
+  pointer-events: none;
+  animation: flash-out 0.15s forwards;
+}
+@keyframes flash-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
 /* RESPONSIVE TEAM GRID */
 @media (min-width: 1200px) {
   .team-grid {
