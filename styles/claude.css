@@ -663,13 +663,71 @@ footer {
   }
 }
 
-/* squished spider when clicked */
-.spider.squished {
-  transition:
-    transform 0.2s ease,
-    opacity 0.3s ease;
-  transform: scale(1.4, 0.2) !important;
-  opacity: 0;
+/* SPIDER DEATH: ZAP + CRUMBLE */
+.spider.zapped {
+  animation: zap-die 0.9s forwards;
+  cursor: default;
+}
+.spider.zapped .legs-top    { animation: curl-top 0.9s forwards; }
+.spider.zapped .legs-bottom { animation: curl-bottom 0.9s forwards; }
+.spider.zapped .leg         { animation: leg-char 0.9s forwards; }
+.spider.zapped .body        { animation: body-char 0.9s forwards; }
+.spider.zapped .eye         { animation: eye-die 0.9s forwards; }
+
+@keyframes zap-die {
+  0%   { filter: brightness(1);   transform: var(--face) scale(1); }
+  8%   { filter: brightness(3.5) drop-shadow(0 0 12px #00ffff); }
+  16%  { filter: brightness(1); }
+  24%  { filter: brightness(4.5) drop-shadow(0 0 18px #ff0055); }
+  34%  { filter: brightness(1.5); transform: var(--face) scale(1.1); }
+  100% { filter: brightness(0.35);
+         transform: var(--face) scale(0.4) translateY(45px) rotate(20deg);
+         opacity: 0; }
+}
+
+@keyframes curl-top {
+  0%   { transform: rotate(-4deg); }
+  20%  { transform: rotate(-32deg); }
+  100% { transform: rotate(55deg) scale(0.45); }
+}
+@keyframes curl-bottom {
+  0%   { transform: rotate(4deg); }
+  20%  { transform: rotate(32deg); }
+  100% { transform: rotate(-55deg) scale(0.45); }
+}
+
+@keyframes leg-char {
+  0%   { stroke: #00ffff; }
+  10%  { stroke: #ffffff; }
+  30%  { stroke: #ff0055; }
+  100% { stroke: #440000; }
+}
+@keyframes body-char {
+  0%   { fill: #1a1a1a; stroke: #cc0000; }
+  10%  { fill: #ffffff; stroke: #ffffff; }
+  100% { fill: #110000; stroke: #440000; }
+}
+@keyframes eye-die {
+  0%   { fill: #ff0055; }
+  10%  { fill: #ffffff; }
+  100% { fill: #220000; }
+}
+
+/* SPARKS */
+.spark {
+  position: fixed;
+  z-index: 9999;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #00ffff;
+  box-shadow: 0 0 8px #00ffff;
+  pointer-events: none;
+  transition: transform 0.45s ease-out, opacity 0.45s ease-out;
+}
+.spark.pink {
+  background: #ff0055;
+  box-shadow: 0 0 8px #ff0055;
 }
 
 /* RESPONSIVE TEAM GRID */

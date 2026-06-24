@@ -234,13 +234,32 @@ Never gonna tell a lie and hurt you
           spider.style.left = startX + "px";
           spider.style.top = yStart + "px";
           // face direction of travel
+          // face direction of travel
+          spider.style.setProperty(
+            "--face",
+            goingRight ? "scaleX(1)" : "scaleX(-1)",
+          );
           spider.style.transform = goingRight ? "scaleX(1)" : "scaleX(-1)";
 
-          spider.addEventListener("click", () => {
-            spider.classList.add("squished");
-            setTimeout(() => spider.remove(), 350);
-          });
+          // spider.addEventListener("click", () => {
+          //   spider.classList.add("squished");
+          //   setTimeout(() => spider.remove(), 350);
+          // });
+          spider.addEventListener("click", (e) => {
+            if (spider.classList.contains("zapped")) return; // already dying
 
+            // freeze it in place mid-crawl
+            const rect = spider.getBoundingClientRect();
+            spider.style.transition = "none";
+            spider.style.left = rect.left + "px";
+            spider.style.top = rect.top + "px";
+
+            spider.classList.remove("crawling");
+            spider.classList.add("zapped");
+            spawnSparks(e.clientX, e.clientY);
+
+            setTimeout(() => spider.remove(), 900);
+          });
           document.body.appendChild(spider);
 
           requestAnimationFrame(() => {
@@ -251,7 +270,24 @@ Never gonna tell a lie and hurt you
 
           setTimeout(() => spider.remove(), duration * 1000 + 200);
         }
-
+        function spawnSparks(x, y) {
+          for (let i = 0; i < 9; i++) {
+            const s = document.createElement("div");
+            s.className = "spark" + (i % 2 ? " pink" : "");
+            s.style.left = x + "px";
+            s.style.top = y + "px";
+            const angle = Math.random() * Math.PI * 2;
+            const dist = 30 + Math.random() * 55;
+            const dx = Math.cos(angle) * dist;
+            const dy = Math.sin(angle) * dist;
+            document.body.appendChild(s);
+            requestAnimationFrame(() => {
+              s.style.transform = `translate(${dx}px, ${dy}px) scale(0)`;
+              s.style.opacity = "0";
+            });
+            setTimeout(() => s.remove(), 500);
+          }
+        }
         function scheduleNext() {
           const delay = 8000 + Math.random() * 12000; // 8–20s between spiders
           loopTimer = setTimeout(() => {
