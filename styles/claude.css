@@ -602,8 +602,8 @@ footer {
 .spider {
   position: fixed;
   z-index: 9998;
-  width: 70px;
-  height: 56px;
+  width: 150px;
+  height: 125px;
   pointer-events: auto;
   cursor: pointer;
   will-change: transform, top, left;
