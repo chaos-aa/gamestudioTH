@@ -189,6 +189,9 @@ Never gonna tell a lie and hurt you
         Game assets, any videos, text and code are the property of their
         respective authors. Built as a student/hobby project. CHAOS-AA on Github
       </p>
+      <button id="spider-toggle" class="spider-toggle">
+        🕷 SPIDERS TOGGLE
+      </button>
     </footer>
     <!-- Spider script-->
     <script>
@@ -301,12 +304,14 @@ Never gonna tell a lie and hurt you
           clearTimeout(loopTimer);
           setTimeout(launchSpider, 2500); // first one shortly after entering
           scheduleNext();
+          refreshSpiderToggle();
         }
 
         function disableSpiders() {
           spidersEnabled = false;
           clearTimeout(loopTimer);
           document.querySelectorAll(".spider").forEach((s) => s.remove());
+          refreshSpiderToggle();
         }
 
         function dismissWarning(choice) {
@@ -329,6 +334,23 @@ Never gonna tell a lie and hurt you
           const warning = document.getElementById("spider-warning");
           if (warning) warning.remove();
           saved === "on" ? enableSpiders() : disableSpiders();
+        }
+        function refreshSpiderToggle() {
+          const btn = document.getElementById("spider-toggle");
+          if (!btn) return;
+          btn.textContent = spidersEnabled
+            ? "🕷 SPIDERS: ON"
+            : "🕷 SPIDERS: OFF";
+          btn.classList.toggle("off", !spidersEnabled);
+        }
+
+        const toggleBtn = document.getElementById("spider-toggle");
+        if (toggleBtn) {
+          toggleBtn.addEventListener("click", () => {
+            const nowOn = !spidersEnabled;
+            localStorage.setItem(STORAGE_KEY, nowOn ? "on" : "off");
+            nowOn ? enableSpiders() : disableSpiders();
+          });
         }
       })();
     </script>

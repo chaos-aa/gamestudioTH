@@ -897,6 +897,31 @@ footer {
   pointer-events: none;
   animation: flash-out 0.15s forwards;
 }
+
+.spider-toggle {
+  background-color: transparent;
+  border: 1px solid #00ffff;
+  color: #00ffff;
+  font-family: 'Courier New', monospace;
+  font-size: 10px;
+  padding: 6px 12px;
+  margin-top: 10px;
+  cursor: pointer;
+  letter-spacing: 1px;
+}
+.spider-toggle:hover {
+  background-color: rgba(0, 255, 255, 0.2);
+  text-shadow: 0 0 5px #00ffff;
+}
+.spider-toggle.off {
+  border-color: #cc0000;
+  color: #cc0000;
+}
+.spider-toggle.off:hover {
+  background-color: rgba(204, 0, 0, 0.2);
+  text-shadow: 0 0 5px #cc0000;
+}
+
 @keyframes flash-out {
   from {
     opacity: 1;
